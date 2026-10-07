@@ -44,17 +44,23 @@ export function Hero() {
             <span className="italic text-bronze">building.</span>
           </motion.h1>
 
-          {/* Intro copy */}
-          <motion.p
+          {/* Intro copy (Updated with official writeup) */}
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-10 max-w-xl text-lg font-light leading-relaxed text-slate-muted md:text-xl"
+            className="mt-10 max-w-xl space-y-5 text-base font-light leading-relaxed text-slate-muted md:text-lg"
           >
-            Tectum Advisory provides structured, independent guidance to
-            institutions and principals navigating complexity across regulatory,
-            governance, and strategic horizons.
-          </motion.p>
+            <p>
+              Every person and every business eventually asks the same question: where, and how, do we keep what matters safe for the people we love.
+            </p>
+            <p>
+              For a growing number of individuals and entities, the answer increasingly points to the UAE. Zero personal income tax and a low, competitive corporate tax regime. Safety and day-to-day stability. A business and residency environment that rewards ambition. Values and a way of life that many recognize and feel at home in.
+            </p>
+            <p>
+              Getting here is one step. Building something that holds, on solid ground, is another.
+            </p>
+          </motion.div>
 
           {/* CTAs */}
           <motion.div
@@ -84,10 +90,10 @@ export function Hero() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-          className="col-span-12 flex items-end lg:col-span-5 mt-12 lg:mt-0"
+          className="col-span-12 mt-12 flex items-end lg:col-span-5 lg:mt-0"
         >
           {/* Image Container with precise 3:4 aspect ratio */}
-          <div className="w-full aspect-[3/4] overflow-hidden rounded-sm border border-stone-border bg-stone-border/20 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)]">
+          <div className="aspect-[3/4] w-full overflow-hidden rounded-sm border border-stone-border bg-stone-border/20 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)]">
             <img
               src="/hero.jpg"
               alt="Abstract modern architecture meeting desert dunes"

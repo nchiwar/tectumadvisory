@@ -5,44 +5,93 @@ import { AnimatedSection } from './AnimatedSection';
 
 const services = [
   {
-    title: 'Regulatory Compliance Architecture',
-    body: 'End-to-end compliance frameworks tailored to your operating jurisdiction — from licensing and registration to ongoing regulatory reporting and audit readiness.',
-    note: 'Tectum Advisory does not provide legal advice. Regulatory filings are executed through licensed local counsel partners.',
+    title: 'Entity Structuring',
+    intro: 'Establishing the right legal and corporate structure in the UAE, matched to the client’s actual purpose rather than a generic template.',
+    bullets: [
+      'Mainland, free zone, and offshore entity selection and setup',
+      'Holding structure design for multi-entity or multi-jurisdiction clients, including trusts, family offices, and special purpose vehicles',
+      'Shareholder and governance structuring',
+      'Coordination with legal counsel on incorporation documents',
+      'Structuring for specific outcomes: asset protection, succession, operational flexibility, or a combination',
+    ],
   },
   {
-    title: 'Corporate Governance Design',
-    body: 'Board structures, committee charters, delegation matrices, and internal policies engineered to withstand scrutiny and scale with organisational complexity.',
-    note: 'Governance recommendations are advisory in nature and subject to ratification by the client\u2019s legal counsel.',
+    title: 'Compliance',
+    intro: 'Keeping a client’s UAE presence sound and current as regulation, reporting obligations, and the client’s own circumstances change.',
+    bullets: [
+      'UAE corporate tax registration and ongoing compliance support',
+      'Regulatory and reporting obligations relevant to the client’s structure',
+      'Coordination with auditors and accountants on statutory filings',
+      'Ongoing monitoring so a structure that was compliant at setup remains compliant as rules or the client’s activity evolves',
+    ],
   },
   {
-    title: 'Structural Advisory & Holding Design',
-    body: 'Holding company structures, cross-border entity mapping, and ownership architecture optimised for operational efficiency, succession, and regulatory alignment.',
-    note: 'Structural designs are reviewed for compliance with applicable corporate laws but do not constitute tax advice.',
+    title: 'Insurance Advisory',
+    intro: 'Independent advice on the insurance coverage a client needs to protect their wealth, their family, and their business, without being tied to a single provider’s products.',
+    bullets: [
+      'Life and family protection coverage review and recommendations',
+      'Business and key-person insurance advisory',
+      'Health and medical insurance guidance for individuals and families',
+      'Property and asset insurance advisory',
+      'Review of existing policies for gaps, overlaps, or better terms',
+    ],
+    note: 'Tectum Advisory provides independent advice on coverage. We do not underwrite or broker insurance policies directly.',
   },
   {
-    title: 'Strategic Growth Planning',
-    body: 'Market entry assessments, expansion roadmaps, and partnership strategies grounded in regional intelligence and institutional-grade diligence.',
-    note: 'Strategic plans are directional frameworks, not financial guarantees or investment recommendations.',
+    title: 'Wealth Advisory',
+    intro: 'Helping clients see how their wealth, structuring, and long-term goals fit together, and coordinating with the right specialists where dedicated investment expertise is needed.',
+    bullets: [
+      'Review of a client’s overall financial picture alongside their UAE structuring and tax position',
+      'Succession and legacy planning',
+      'Coordination with a client’s existing bankers, private bankers, or investment managers to keep structuring and investment decisions aligned',
+      'For clients seeking discretionary investment management, referral to an independent investment manager, as a separate option clients may choose to engage directly',
+      'Ongoing review as a client’s circumstances, family, or holdings change',
+    ],
+    note: 'Tectum Advisory provides wealth planning and coordination. We do not provide discretionary investment management or direct investment recommendations.',
   },
   {
-    title: 'Institutional Representation',
-    body: 'Acting as an independent intermediary in negotiations, regulatory dialogues, and stakeholder engagements — ensuring your position is articulated with precision.',
-    note: 'Representation is limited to advisory and facilitation roles. Tectum does not act as a statutory agent or authorised signatory.',
+    title: 'Entity Management',
+    intro: 'Ongoing administration and oversight for entities after they are established, so structures remain active, current, and properly maintained.',
+    bullets: [
+      'License renewals and regulatory filings',
+      'Registered agent and corporate secretarial support',
+      'Ongoing bank liaison once accounts are active, including ordinary account maintenance',
+      'Annual review of entity structure against the client’s current needs',
+      'Point of contact for day-to-day administrative and regulatory matters',
+    ],
   },
   {
-    title: 'Risk & Diligence Frameworks',
-    body: 'Comprehensive risk mapping, counterparty diligence, and internal control reviews that identify exposure before it becomes liability.',
-    note: 'Diligence reports reflect information available at the time of engagement and do not constitute audits under ISAE standards.',
+    title: 'Residency, Visa, and Banking Support',
+    intro: 'Hands-on support for the residency, immigration, and banking steps a UAE presence actually requires, for clients, their families, and the people who work for them.',
+    bullets: [
+      'UAE residency visa processing for clients and their families, including residency-by-investment routes through qualifying property, business, or deposit',
+      'Visa processing for employees and domestic staff of client entities and households',
+      'Corporate bank account opening, one of the most difficult steps for a new entity in the UAE, managed end to end through to approval',
+      'Personal bank account opening support for individual clients',
+      'Powers of attorney and related documentation, prepared and processed as needed',
+    ],
   },
   {
-    title: ' succession & Continuity Structuring',
-    body: 'Ownership transition planning, key-person dependency mapping, and continuity protocols that protect the institution across generational change.',
-    note: 'Continuity structures should be reviewed in conjunction with the client\u2019s estate planning counsel.',
+    title: 'Mortgage and Property Finance Advisory',
+    intro: 'Helping clients put their financial position in the strongest possible shape to secure property finance in the UAE, and connecting them with licensed partners for the mortgage and property transaction itself.',
+    bullets: [
+      'Review and structuring of income, credit lines, and cash flow to strengthen mortgage eligibility',
+      'Guidance on how a client’s entity or asset structure affects their financing options',
+      'Coordination with licensed mortgage consultants for lender comparison and the mortgage application itself',
+      'Referral to licensed real estate partners for property sourcing, whether for personal use, rental yield, or investment purposes',
+    ],
+    note: 'Tectum Advisory does not hold a mortgage brokerage or real estate brokerage license. Mortgage placement and property transactions are carried out by our licensed partners, with Tectum advising on the client’s financial structuring throughout.',
   },
   {
-    title: 'Regulatory Liaison & Filing Support',
-    body: 'Direct engagement with regulatory authorities on your behalf — preparing submissions, managing queries, and maintaining ongoing dialogue with supervisory bodies.',
-    note: 'Filing support is administrative and advisory. Legal responsibility for submissions remains with the regulated entity.',
+    title: 'Citizenship-by-Investment Advisory',
+    intro: 'Guidance for clients seeking another passport through established citizenship-by-investment programs across Europe, the Caribbean, and the Americas.',
+    bullets: [
+      'Program selection across eligible jurisdictions, matched to the client’s goals, timeline, and budget',
+      'Coordination with government-authorized agents and licensed partners in the chosen jurisdiction',
+      'Structuring of the qualifying investment, whether by real estate, government fund, or business investment',
+      'Guidance through due diligence, application, and processing requirements',
+    ],
+    note: 'Tectum Advisory advises on and coordinates citizenship-by-investment programs. Applications are submitted through each program’s own government-authorized agents, in line with that jurisdiction’s requirements.',
   },
 ];
 
@@ -101,12 +150,27 @@ export function Services() {
                 <h3 className="mb-5 font-serif text-2xl leading-snug text-slate md:text-3xl">
                   {service.title}
                 </h3>
-                <p className="mb-4 max-w-xl text-base font-light leading-relaxed text-slate-muted md:text-lg">
-                  {service.body}
+                
+                {/* Replaced single body text with intro and bullet points */}
+                <p className="mb-5 max-w-xl text-base font-light leading-relaxed text-slate-muted md:text-lg">
+                  {service.intro}
                 </p>
-                <p className="max-w-lg border-l-2 border-bronze/20 py-1 pl-4 text-sm font-light italic leading-relaxed text-slate-muted/70">
-                  {service.note}
-                </p>
+                
+                {service.bullets && (
+                  <ul className="mb-6 max-w-xl list-outside list-disc space-y-3 pl-5 text-base font-light leading-relaxed text-slate-muted md:text-lg">
+                    {service.bullets.map((bullet, idx) => (
+                      <li key={idx} className="pl-1 marker:text-bronze">
+                        {bullet}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+
+                {service.note && (
+                  <p className="mt-6 max-w-lg border-l-2 border-bronze/20 py-1 pl-4 text-sm font-light italic leading-relaxed text-slate-muted/70">
+                    {service.note}
+                  </p>
+                )}
               </motion.div>
             ))}
           </div>

@@ -13,7 +13,7 @@ export function Contact() {
           <div className="mb-6 flex items-center gap-4">
             <span className="h-px w-12 bg-bronze" />
             <span className="text-xs font-light uppercase tracking-[0.3em] text-bronze">
-              Contact
+              Get in touch
             </span>
           </div>
           <h2 className="font-serif text-4xl leading-tight text-slate md:text-5xl lg:text-6xl xl:text-[4.5rem]">
@@ -23,10 +23,14 @@ export function Contact() {
             <span className="italic text-bronze">building.</span>
           </h2>
           
-          {/* Added introductory text to prevent the section from looking bland */}
-          <p className="mt-8 max-w-2xl text-base font-light leading-relaxed text-slate-muted">
-            Every engagement starts with a conversation, not a sales pitch. Tell us what you’re working on, whether you have a specific service in mind or you’re still exploring, and we’ll tell you plainly whether, and how, we can help.
-          </p>
+          <div className="mt-8 max-w-2xl space-y-5 text-base font-light leading-relaxed text-slate-muted">
+            <p>
+              Every engagement starts with a conversation, not a sales pitch. Tell us what you’re working on, whether you have a specific service in mind or you’re still exploring, and we’ll tell you plainly whether, and how, we can help.
+            </p>
+            <p>
+              Reach out directly, and a member of the team will get back to you. We don’t pass your details to third parties, and we don’t add you to a mailing list you didn’t ask for.
+            </p>
+          </div>
         </AnimatedSection>
 
         {/* Card */}

@@ -29,21 +29,24 @@ export function Mission() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.9, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="absolute bottom-4 left-4 z-10 w-[calc(100%-2rem)] max-w-md rounded-sm border border-stone-border bg-alabaster p-6 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] sm:bottom-6 sm:left-6 sm:p-8 md:bottom-0 md:left-0 md:w-full md:rounded-bl-sm md:rounded-br-none md:rounded-tl-none md:p-10 lg:max-w-lg lg:p-12"
+            className="absolute bottom-4 left-4 z-10 w-[calc(100%-2rem)] max-w-md rounded-sm border border-stone-border bg-alabaster p-6 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] sm:bottom-6 sm:left-6 sm:p-8 md:bottom-0 md:left-0 md:w-full md:rounded-bl-sm md:rounded-br-none md:rounded-tl-none md:p-10 lg:max-w-xl lg:p-12"
           >
             <div className="mb-5 flex items-center gap-3 lg:mb-6">
               <span className="h-px w-8 bg-bronze" />
               <span className="text-[10px] font-light uppercase tracking-[0.3em] text-bronze">
-                Our Philosophy
+                What we do
               </span>
             </div>
             
-            {/* Dark text on solid light card */}
-            <p className="font-serif text-lg leading-relaxed text-slate md:text-xl lg:text-2xl">
-              Tectum Advisory exists to build and hold that structure — the
-              institutional framework that shelters ambition from uncertainty,
-              and gives lasting form to what you are constructing.
-            </p>
+            {/* Dark text on solid light card (Updated with official writeup) */}
+            <div className="space-y-4 font-serif text-base leading-relaxed text-slate md:text-lg">
+              <p>
+                Tectum Advisory exists to build and hold that structure. We work with individuals, families, and entities, from a first venture in the UAE to an established presence being expanded or restructured. We provide the structuring, compliance, insurance and wealth advisory, and the residency, banking, and financing work that a UAE presence actually requires, so that what a client establishes here stands on its own, without carrying the weight of getting it wrong.
+              </p>
+              <p>
+                We are not a firm that sets things up and disappears. A roof is not a one-time purchase. It is maintained, checked, and reinforced for as long as the people and entities beneath it depend on it. That is the relationship we intend to have with every client: personal, attentive, and built to last well beyond the first year.
+              </p>
+            </div>
           </motion.div>
         </motion.div>
       </div>
