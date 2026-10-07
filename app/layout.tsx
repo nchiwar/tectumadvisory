@@ -15,17 +15,28 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
+  // Resolves the terminal warning about metadataBase
+  metadataBase: new URL('https://tectumadvisory.com'),
+  
   title: "Tectum Advisory — Shelter for what you're building.",
   description:
     'Tectum Advisory is an independent corporate advisory firm providing structured solutions across regulatory compliance, governance, and strategic growth.',
+  
+  // Displays the logo on the browser tab and Apple home screens
+  icons: {
+    icon: '/tectumlogo.png',
+    apple: '/tectumlogo.png',
+  },
+  
   openGraph: {
     title: 'Tectum Advisory',
     description: "Shelter for what you're building.",
-    images: [{ url: 'https://bolt.new/static/og_default.png' }],
+    // Displays your logo when the link is shared on social media
+    images: [{ url: '/tectumlogo.png' }],
   },
   twitter: {
     card: 'summary_large_image',
-    images: [{ url: 'https://bolt.new/static/og_default.png' }],
+    images: [{ url: '/tectumlogo.png' }],
   },
 };
 
