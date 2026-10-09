@@ -23,12 +23,9 @@ export function Contact() {
             <span className="italic text-bronze">building.</span>
           </h2>
           
-          <div className="mt-8 max-w-2xl space-y-5 text-base font-light leading-relaxed text-slate-muted">
+          <div className="mt-8 max-w-2xl text-base font-light leading-relaxed text-slate-muted">
             <p>
-              Every engagement starts with a conversation, not a sales pitch. Tell us what you’re working on, whether you have a specific service in mind or you’re still exploring, and we’ll tell you plainly whether, and how, we can help.
-            </p>
-            <p>
-              Reach out directly, and a member of the team will get back to you. We don’t pass your details to third parties, and we don’t add you to a mailing list you didn’t ask for.
+              Every engagement starts with a conversation, not a sales pitch. Tell us what you're working on. You may have a specific service in mind, or you may still be exploring. We'll help you clarify the objective, understand the available options, and decide on the right path forward.
             </p>
           </div>
         </AnimatedSection>

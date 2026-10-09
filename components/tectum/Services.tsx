@@ -1,10 +1,13 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowUp } from 'lucide-react';
 import { AnimatedSection } from './AnimatedSection';
 
 const services = [
   {
+    id: 'svc-entity-structuring',
     title: 'Entity Structuring',
     intro: 'Establishing the right legal and corporate structure in the UAE, matched to the client’s actual purpose rather than a generic template.',
     bullets: [
@@ -16,6 +19,7 @@ const services = [
     ],
   },
   {
+    id: 'svc-compliance',
     title: 'Compliance',
     intro: 'Keeping a client’s UAE presence sound and current as regulation, reporting obligations, and the client’s own circumstances change.',
     bullets: [
@@ -26,6 +30,7 @@ const services = [
     ],
   },
   {
+    id: 'svc-insurance-advisory',
     title: 'Insurance Advisory',
     intro: 'Independent advice on the insurance coverage a client needs to protect their wealth, their family, and their business, without being tied to a single provider’s products.',
     bullets: [
@@ -38,6 +43,7 @@ const services = [
     note: 'Tectum Advisory provides independent advice on coverage. We do not underwrite or broker insurance policies directly.',
   },
   {
+    id: 'svc-wealth-advisory',
     title: 'Wealth Advisory',
     intro: 'Helping clients see how their wealth, structuring, and long-term goals fit together, and coordinating with the right specialists where dedicated investment expertise is needed.',
     bullets: [
@@ -50,6 +56,7 @@ const services = [
     note: 'Tectum Advisory provides wealth planning and coordination. We do not provide discretionary investment management or direct investment recommendations.',
   },
   {
+    id: 'svc-entity-management',
     title: 'Entity Management',
     intro: 'Ongoing administration and oversight for entities after they are established, so structures remain active, current, and properly maintained.',
     bullets: [
@@ -61,6 +68,7 @@ const services = [
     ],
   },
   {
+    id: 'svc-residency-visa-banking',
     title: 'Residency, Visa, and Banking Support',
     intro: 'Hands-on support for the residency, immigration, and banking steps a UAE presence actually requires, for clients, their families, and the people who work for them.',
     bullets: [
@@ -72,6 +80,7 @@ const services = [
     ],
   },
   {
+    id: 'svc-mortgage-property',
     title: 'Mortgage and Property Finance Advisory',
     intro: 'Helping clients put their financial position in the strongest possible shape to secure property finance in the UAE, and connecting them with licensed partners for the mortgage and property transaction itself.',
     bullets: [
@@ -83,6 +92,7 @@ const services = [
     note: 'Tectum Advisory does not hold a mortgage brokerage or real estate brokerage license. Mortgage placement and property transactions are carried out by our licensed partners, with Tectum advising on the client’s financial structuring throughout.',
   },
   {
+    id: 'svc-citizenship-investment',
     title: 'Citizenship-by-Investment Advisory',
     intro: 'Guidance for clients seeking another passport through established citizenship-by-investment programs across Europe, the Caribbean, and the Americas.',
     bullets: [
@@ -96,8 +106,31 @@ const services = [
 ];
 
 export function Services() {
+  const [activeTargetId, setActiveTargetId] = useState<string | null>(null);
+
+  useEffect(() => {
+    const handleChipClick = (event: Event) => {
+      const customEvent = event as CustomEvent<{ id: string }>;
+      if (customEvent.detail?.id) {
+        setActiveTargetId(customEvent.detail.id);
+      }
+    };
+
+    window.addEventListener('service-chip-clicked', handleChipClick);
+    return () => window.removeEventListener('service-chip-clicked', handleChipClick);
+  }, []);
+
+  const handleReturnToGrid = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const gridEl = document.getElementById('at-a-glance');
+    if (gridEl) {
+      gridEl.scrollIntoView({ behavior: 'smooth' });
+    }
+    setActiveTargetId(null);
+  };
+
   return (
-    <section id="services" className="bg-alabaster py-24 md:py-32">
+    <section id="services" className="relative bg-alabaster py-24 md:py-32">
       <div className="mx-auto max-w-[1400px] px-6 md:px-10 lg:px-16">
         <div className="flex flex-col gap-16 lg:flex-row lg:gap-24">
           {/* Left: Sticky header (33%) */}
@@ -107,7 +140,7 @@ export function Services() {
                 <div className="mb-6 flex items-center gap-4">
                   <span className="h-px w-12 bg-bronze" />
                   <span className="text-xs font-light uppercase tracking-[0.3em] text-bronze">
-                    Services
+                    Services Details
                   </span>
                 </div>
                 <h2 className="font-serif text-4xl leading-tight text-slate md:text-5xl lg:text-[3.5rem]">
@@ -129,50 +162,74 @@ export function Services() {
 
           {/* Right: Scrolling service blocks (66%) */}
           <div className="lg:w-2/3">
-            {services.map((service, i) => (
-              <motion.div
-                key={service.title}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-60px' }}
-                transition={{
-                  duration: 0.7,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
-                className="border-t border-bronze/30 py-10 md:py-12 last:border-b last:border-bronze/30"
-              >
-                <div className="mb-5 flex items-baseline gap-4">
-                  <span className="font-serif text-lg text-bronze">
-                    {String(i + 1).padStart(2, '0')}
-                  </span>
-                  <span className="h-px flex-1 bg-stone-border" />
-                </div>
-                <h3 className="mb-5 font-serif text-2xl leading-snug text-slate md:text-3xl">
-                  {service.title}
-                </h3>
-                
-                {/* Replaced single body text with intro and bullet points */}
-                <p className="mb-5 max-w-xl text-base font-light leading-relaxed text-slate-muted md:text-lg">
-                  {service.intro}
-                </p>
-                
-                {service.bullets && (
-                  <ul className="mb-6 max-w-xl list-outside list-disc space-y-3 pl-5 text-base font-light leading-relaxed text-slate-muted md:text-lg">
-                    {service.bullets.map((bullet, idx) => (
-                      <li key={idx} className="pl-1 marker:text-bronze">
-                        {bullet}
-                      </li>
-                    ))}
-                  </ul>
-                )}
+            {services.map((service, i) => {
+              const isSelected = activeTargetId === service.id;
 
-                {service.note && (
-                  <p className="mt-6 max-w-lg border-l-2 border-bronze/20 py-1 pl-4 text-sm font-light italic leading-relaxed text-slate-muted/70">
-                    {service.note}
+              return (
+                <motion.div
+                  key={service.id}
+                  id={service.id}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-60px' }}
+                  transition={{
+                    duration: 0.7,
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
+                  className="relative scroll-mt-28 border-t border-bronze/30 py-10 md:py-12 last:border-b last:border-bronze/30"
+                >
+                  {/* Floating return indicator attached exclusively to the clicked service */}
+                  <AnimatePresence>
+                    {isSelected && (
+                      <motion.button
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 0.85, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.9 }}
+                        whileHover={{ opacity: 1, scale: 1.05 }}
+                        transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+                        onClick={handleReturnToGrid}
+                        aria-label="Return to At a Glance grid"
+                        className="absolute right-0 top-10 flex items-center gap-2 rounded-full border border-stone-border bg-white px-3.5 py-1.5 text-xs text-slate shadow-sm hover:border-bronze hover:text-bronze"
+                      >
+                        <span className="hidden sm:inline font-light tracking-wide">Back to overview</span>
+                        <ArrowUp className="h-3.5 w-3.5 text-bronze" />
+                      </motion.button>
+                    )}
+                  </AnimatePresence>
+
+                  <div className="mb-5 flex items-baseline gap-4 pr-32">
+                    <span className="font-serif text-lg text-bronze">
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                    <span className="h-px flex-1 bg-stone-border" />
+                  </div>
+
+                  <h3 className="mb-5 font-serif text-2xl leading-snug text-slate md:text-3xl">
+                    {service.title}
+                  </h3>
+
+                  <p className="mb-5 max-w-xl text-base font-light leading-relaxed text-slate-muted md:text-lg">
+                    {service.intro}
                   </p>
-                )}
-              </motion.div>
-            ))}
+
+                  {service.bullets && (
+                    <ul className="mb-6 max-w-xl list-outside list-disc space-y-3 pl-5 text-base font-light leading-relaxed text-slate-muted md:text-lg">
+                      {service.bullets.map((bullet, idx) => (
+                        <li key={idx} className="pl-1 marker:text-bronze">
+                          {bullet}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+
+                  {service.note && (
+                    <p className="mt-6 max-w-lg border-l-2 border-bronze/20 py-1 pl-4 text-sm font-light italic leading-relaxed text-slate-muted/70">
+                      {service.note}
+                    </p>
+                  )}
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </div>

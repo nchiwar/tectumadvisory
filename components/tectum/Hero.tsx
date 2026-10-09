@@ -5,7 +5,7 @@ import { ArrowRight } from 'lucide-react';
 
 export function Hero() {
   return (
-    <section className="relative min-h-[85vh] bg-alabaster pt-32 md:pt-40">
+    <section id="home" className="relative min-h-[85vh] bg-alabaster pt-32 md:pt-40">
       {/* Subtle grain texture overlay */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.015]"
@@ -27,7 +27,7 @@ export function Hero() {
           >
             <span className="h-px w-12 bg-bronze" />
             <span className="text-xs font-light uppercase tracking-[0.3em] text-bronze">
-              Independent Corporate Advisory
+          
             </span>
           </motion.div>
 
@@ -77,10 +77,10 @@ export function Hero() {
               <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
             </a>
             <a
-              href="#services"
+              href="#at-a-glance"
               className="inline-flex items-center justify-center gap-3 rounded-sm border border-slate/30 px-8 py-4 text-sm font-light tracking-wide text-slate transition-all duration-300 hover:border-slate hover:bg-slate/5"
             >
-              Our services
+              Our Services
             </a>
           </motion.div>
         </div>

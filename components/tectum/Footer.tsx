@@ -27,7 +27,7 @@ export function Footer() {
           {/* Center & Right: Navigation & Contact wrappers */}
           <div className="flex flex-col gap-10 sm:flex-row sm:gap-20 lg:gap-32">
             
-            {/* Navigation */}
+            {/* Filtered Navigation */}
             <div>
               <p className="mb-4 text-[10px] font-light uppercase tracking-[0.3em] text-bronze">
                 Navigate
@@ -36,8 +36,7 @@ export function Footer() {
                 {[
                   { label: 'Home', href: '#home' },
                   { label: 'About', href: '#about' },
-                  { label: 'Services', href: '#services' },
-                  { label: 'Contact', href: '#contact' },
+                  { label: 'Services', href: '#at-a-glance' },
                 ].map((link) => (
                   <li key={link.label}>
                     <a
@@ -51,21 +50,14 @@ export function Footer() {
               </ul>
             </div>
 
-            {/* Contact */}
-            <div>
-              <p className="mb-4 text-[10px] font-light uppercase tracking-[0.3em] text-bronze">
-                Contact
-              </p>
-              <ul className="space-y-2">
-                <li>
-                  <a
-                    href="mailto:info@tectumadvisory.com"
-                    className="text-sm font-light text-alabaster/60 transition-colors hover:text-alabaster"
-                  >
-                    info@tectumadvisory.com
-                  </a>
-                </li>
-              </ul>
+            {/* Clean Contact Email Block */}
+            <div className="flex items-start sm:mt-8">
+              <a
+                href="mailto:info@tectumadvisory.com"
+                className="text-sm font-light text-alabaster/60 transition-colors hover:text-alabaster"
+              >
+                info@tectumadvisory.com
+              </a>
             </div>
             
           </div>
